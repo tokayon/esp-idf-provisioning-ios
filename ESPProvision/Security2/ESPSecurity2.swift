@@ -23,7 +23,7 @@ import SwiftProtobuf
 import CryptoKit
 
 /// Enum type which encapsulates different states of a secured session.
-enum Security2SessionState: Int {
+public enum Security2SessionState: Int {
     /// Initial request of a session.
     case Request1
     /// Received response for first state.
@@ -36,7 +36,7 @@ enum Security2SessionState: Int {
 
 /// The `ESPSecurity1` class conforms and implememnt methods of `ESPCodeable` protocol.
 /// This class provides methods for handling request/response data in a secure communication.
-class ESPSecurity2: ESPCodeable {
+public class ESPSecurity2: ESPCodeable {
     
     private static let basePoint = Data([9] + [UInt8](repeating: 0, count: 31))
 
@@ -57,7 +57,7 @@ class ESPSecurity2: ESPCodeable {
     /// Create Security 1 implementation with given proof of possession
     ///
     /// - Parameter proofOfPossession: Proof of possession identifying the  `ESPDevice`.
-    init(username: String, password: String) {
+    public init(username: String, password: String) {
         ESPLog.log("Initailising secure class with proof of possession.")
         self.username = username
         self.password = password
